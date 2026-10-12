@@ -1,0 +1,21 @@
+{
+  "nombre": "Oscar_Manuel_Lopez",
+  "titulo": "Desarrollador Frontend",
+  "resumen": "Soy estudiante de Ingeniería de Sistemas y artista 3D en formación, apasionado por el modelado y la escultura digital de personajes. Me interesa crear diseños originales y criaturas fantásticas mientras desarrollo mis habilidades en ZBrush y construyo mi propio estilo artístico.",
+  "experiencia": [
+    {
+      "empresa": "Empresa X",
+      "cargo": "Practicante",
+      "periodo": "2025 - 2026",
+      "descripcion": "trabajar"
+    }
+  ],
+  "educacion": [
+    {
+      "institucion": "Universidad Franz_Tamayo",
+      "titulo": "Ingeniería de Sistemas",
+      "periodo": "2022 - 2026"
+    }
+  ],
+  "habilidades": ["Angular", "TypeScript", "Bootstrap", "Git"]
+}
