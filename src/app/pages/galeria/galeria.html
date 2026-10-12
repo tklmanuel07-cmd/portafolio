@@ -1,0 +1,8 @@
+<h2 class="mb-4">Galería</h2>
+<div class="row g-3">
+  @for (f of fotos; track f) {
+    <div class="col-6 col-lg-4">
+      <img [src]="'img/' + f" class="img-fluid rounded shadow-sm" loading="lazy" alt="Foto de la galería">
+    </div>
+  }
+</div>

@@ -1,0 +1,29 @@
+@if (cv(); as c) {
+  <h2>{{ c.nombre }}</h2>
+  <p class="text-muted">{{ c.titulo }}</p>
+  <p>{{ c.resumen }}</p>
+
+  <h4 class="mt-4">Experiencia</h4>
+  @for (e of c.experiencia; track e.empresa) {
+    <div class="card mb-2">
+      <div class="card-body">
+        <strong>{{ e.cargo }}</strong> — {{ e.empresa }} <small>({{ e.periodo }})</small>
+        <p class="mb-0">{{ e.descripcion }}</p>
+      </div>
+    </div>
+  }
+
+  <h4 class="mt-4">Educación</h4>
+  @for (ed of c.educacion; track ed.institucion) {
+    <div class="card mb-2">
+      <div class="card-body">
+        <strong>{{ ed.titulo }}</strong> — {{ ed.institucion }} <small>({{ ed.periodo }})</small>
+      </div>
+    </div>
+  }
+
+  <h4 class="mt-4">Habilidades</h4>
+  @for (h of c.habilidades; track h) {
+    <span class="badge text-bg-primary me-1">{{ h }}</span>
+  }
+}
