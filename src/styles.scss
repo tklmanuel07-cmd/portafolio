@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg: #efefef;
+  --ink: #262b28;
+  --muted: #7d8f7c;
+  --sage: #8da48c;
+  --orange: #d4501a;
+  --line: rgba(38, 43, 40, .15);
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.display {
+  font-family: 'Anton', 'Arial Narrow', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: .92;
+  letter-spacing: .005em;
+}
+
+.label {
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--orange);
+}
+
+.btn-solid, .btn-line {
+  display: inline-block;
+  padding: .85rem 1.8rem;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: .25s;
+}
+.btn-solid { background: var(--orange); color: #fff; border: 1.5px solid var(--orange); }
+.btn-solid:hover { background: transparent; color: var(--orange); }
+.btn-line { color: var(--ink); border: 1.5px solid var(--ink); }
+.btn-line:hover { background: var(--ink); color: #fff; }
+
+.chip {
+  display: inline-block;
+  padding: .4rem 1rem;
+  font-size: .8rem;
+  letter-spacing: .06em;
+  color: var(--ink);
+  border: 1px solid var(--sage);
+  border-radius: 999px;
+  transition: .25s;
+}
+.chip:hover { background: var(--sage); color: #fff; }
+
+.page { animation: fadeUp .7s ease both; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}

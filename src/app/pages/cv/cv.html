@@ -1,29 +1,44 @@
 @if (cv(); as c) {
-  <h2>{{ c.nombre }}</h2>
-  <p class="text-muted">{{ c.titulo }}</p>
-  <p>{{ c.resumen }}</p>
+  <div class="page">
+    <p class="label">Currículum</p>
+    <h1 class="display name">{{ c.nombre }}</h1>
+    <p class="role">{{ c.titulo }}</p>
+    <p class="resumen">{{ c.resumen }}</p>
 
-  <h4 class="mt-4">Experiencia</h4>
-  @for (e of c.experiencia; track e.empresa) {
-    <div class="card mb-2">
-      <div class="card-body">
-        <strong>{{ e.cargo }}</strong> — {{ e.empresa }} <small>({{ e.periodo }})</small>
-        <p class="mb-0">{{ e.descripcion }}</p>
+    <section class="bloque">
+      <h2 class="label">Experiencia</h2>
+      @for (e of c.experiencia; track e.empresa) {
+        <article class="fila">
+          <span class="periodo">{{ e.periodo }}</span>
+          <div>
+            <h3>{{ e.cargo }}</h3>
+            <p class="org">{{ e.empresa }}</p>
+            <p class="desc">{{ e.descripcion }}</p>
+          </div>
+        </article>
+      }
+    </section>
+
+    <section class="bloque">
+      <h2 class="label">Educación</h2>
+      @for (ed of c.educacion; track ed.institucion) {
+        <article class="fila">
+          <span class="periodo">{{ ed.periodo }}</span>
+          <div>
+            <h3>{{ ed.titulo }}</h3>
+            <p class="org">{{ ed.institucion }}</p>
+          </div>
+        </article>
+      }
+    </section>
+
+    <section class="bloque">
+      <h2 class="label">Habilidades</h2>
+      <div class="chips">
+        @for (h of c.habilidades; track h) {
+          <span class="chip">{{ h }}</span>
+        }
       </div>
-    </div>
-  }
-
-  <h4 class="mt-4">Educación</h4>
-  @for (ed of c.educacion; track ed.institucion) {
-    <div class="card mb-2">
-      <div class="card-body">
-        <strong>{{ ed.titulo }}</strong> — {{ ed.institucion }} <small>({{ ed.periodo }})</small>
-      </div>
-    </div>
-  }
-
-  <h4 class="mt-4">Habilidades</h4>
-  @for (h of c.habilidades; track h) {
-    <span class="badge text-bg-primary me-1">{{ h }}</span>
-  }
+    </section>
+  </div>
 }

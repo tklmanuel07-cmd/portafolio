@@ -1,8 +1,23 @@
-<h2 class="mb-4">Galería</h2>
-<div class="row g-3">
-  @for (f of fotos; track f) {
-    <div class="col-6 col-lg-4">
-      <img [src]="'img/' + f" class="img-fluid rounded shadow-sm" loading="lazy" alt="Foto de la galería">
-    </div>
-  }
+<div class="page">
+  <p class="label">Fotografías</p>
+  <h1 class="display head">Galería</h1>
+  <p class="sub">Haz clic en una imagen para verla en grande.</p>
+
+  <div class="grid">
+    @for (f of fotos; track f; let i = $index) {
+      <button class="item" (click)="abrir(f)">
+        <img [src]="'img/' + f" loading="lazy" alt="Fotografía {{ i + 1 }}">
+        <span class="num">0{{ i + 1 }}</span>
+      </button>
+    }
+  </div>
 </div>
+
+@if (seleccionada(); as s) {
+  <div class="lightbox" (click)="cerrar()">
+    <img [src]="'img/' + s" alt="Fotografía ampliada" (click)="$event.stopPropagation()">
+    <button class="close" (click)="cerrar()" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+}

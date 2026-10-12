@@ -1,11 +1,97 @@
 .sidebar {
-  min-width: 220px;
+  width: 270px;
+  flex-shrink: 0;
+  padding: 2.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  border-right: 1px solid var(--line);
 }
 
 @media (min-width: 768px) {
+  .sidebar { position: sticky; top: 0; height: 100vh; }
+}
+
+.logo {
+  font-size: 2.2rem;
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.menu { display: flex; flex-direction: column; gap: .2rem; }
+
+.menu a {
+  display: flex;
+  align-items: baseline;
+  gap: .9rem;
+  padding: .7rem 0;
+  font-size: .85rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: .25s;
+}
+.menu .n { font-size: .7rem; color: var(--sage); transition: .25s; }
+.menu a:hover { color: var(--orange); padding-left: .5rem; }
+.menu a.active { color: var(--orange); border-bottom-color: var(--orange); }
+.menu a.active .n { color: var(--orange); }
+
+.contact {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+.name {
+  margin: 0 0 .4rem;
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.contact a {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  font-size: .8rem;
+  color: var(--muted);
+  text-decoration: none;
+  word-break: break-all;
+  transition: .25s;
+}
+.contact a:hover { color: var(--orange); }
+
+.ico {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sage);
+  color: #fff;
+}
+.ico svg { width: 13px; height: 13px; }
+
+@media (max-width: 767.98px) {
   .sidebar {
-    position: sticky;
-    top: 0;
-    height: 100vh;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
   }
+  .menu { flex-direction: row; gap: 1rem; }
+  .menu .n, .contact { display: none; }
+  .menu a { padding: .3rem 0; font-size: .72rem; }
 }

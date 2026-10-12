@@ -1,0 +1,38 @@
+.name {
+  margin: .4rem 0 0;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  color: var(--orange);
+}
+.role {
+  margin: .8rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+.resumen { max-width: 620px; margin-top: 1.5rem; line-height: 1.8; }
+
+.bloque { margin-top: 3.5rem; }
+.bloque .label { padding-bottom: .8rem; border-bottom: 1px solid var(--ink); }
+
+.fila {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: .25s;
+}
+.fila:hover { padding-left: .6rem; }
+
+.periodo { font-size: .85rem; font-weight: 500; color: var(--orange); letter-spacing: .06em; }
+h3 { margin: 0; font-size: 1.15rem; font-weight: 700; }
+.org { margin: .2rem 0 0; color: var(--sage); font-weight: 500; }
+.desc { margin: .7rem 0 0; line-height: 1.7; }
+
+.chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }
+
+@media (max-width: 575.98px) {
+  .fila { grid-template-columns: 1fr; gap: .3rem; }
+}

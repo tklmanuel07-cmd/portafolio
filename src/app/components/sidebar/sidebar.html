@@ -1,8 +1,27 @@
-<nav class="bg-dark text-white p-3 sidebar">
-  <h5 class="mb-4">Oscar_M_l</h5>
-  <ul class="nav nav-pills flex-column gap-1">
-    <li><a class="nav-link text-white" routerLink="/inicio" routerLinkActive="active">Inicio</a></li>
-    <li><a class="nav-link text-white" routerLink="/galeria" routerLinkActive="active">Galería</a></li>
-    <li><a class="nav-link text-white" routerLink="/cv" routerLinkActive="active">CV</a></li>
-  </ul>
-</nav>
+<aside class="sidebar">
+  <a class="logo display" routerLink="/inicio">OML</a>
+
+  <nav class="menu">
+    <a routerLink="/inicio" routerLinkActive="active"><span class="n">01</span>Inicio</a>
+    <a routerLink="/galeria" routerLinkActive="active"><span class="n">02</span>Galería</a>
+    <a routerLink="/cv" routerLinkActive="active"><span class="n">03</span>Currículum</a>
+  </nav>
+
+  <div class="contact">
+    <p class="name">Oscar Manuel Lopez</p>
+
+    <a href="https://github.com/tklmanuel07-cmd" target="_blank" rel="noopener">
+      <span class="ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </span>
+      github.com/tklmanuel07-cmd
+    </a>
+
+    <a href="mailto:tu-correo@gmail.com">
+      <span class="ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </span>
+      tu-correo@gmail.com
+    </a>
+  </div>
+</aside>
